@@ -1,0 +1,1 @@
+A Universal Asynchronous Receiver/Transmitter (UART) is a hardware module that enables asynchronous serial communication between two devices. This project contains the full implementation of baud rate generation and uart transmitter in Verilog.
