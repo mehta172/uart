@@ -1,8 +1,0 @@
-Vivado Simulator 2018.3
-Time resolution is 1 ps
-Transmission completed.
-art ----
-[Test 1] Received: fb, Error: 0
-Fatal: Test 1 failed!
-Time: 17500 ns  Iteration: 1  Process: /uart_rx_tb/Initial58_4  File: A:/Verilog Vivado/UART/UART.srcs/sources_1/new/uart_rx_tb.v
-$finish called at time : 17500 ns : File "A:/Verilog Vivado/UART/UART.srcs/sources_1/new/uart_rx_tb.v" Line 75
