@@ -7,7 +7,7 @@ module uart_tx_tb;
     reg i_tx_rst;
     reg i_start_bit;
     reg [7:0] i_data_in;
-    reg i_parity_bit;
+    //reg i_parity_bit;
     //reg i_stop_bit;
 
     // Outputs
@@ -21,7 +21,7 @@ module uart_tx_tb;
         .i_tx_rst(i_tx_rst),
         .i_start_bit(i_start_bit),
         .i_data_in(i_data_in),
-        .i_parity_bit(i_parity_bit),
+        //.i_parity_bit(i_parity_bit),
         //.i_stop_bit(i_stop_bit),
         .o_tx_data_out(o_tx_data_out),
         .o_tx_data_done(o_tx_data_done),
@@ -36,8 +36,8 @@ module uart_tx_tb;
         // Initialize inputs
         i_tx_rst = 0;
         i_start_bit = 0;
-        i_data_in = 8'b00000000;
-        i_parity_bit = 0;
+        i_data_in = 8'b10100011;
+        //i_parity_bit = 0;
         //i_stop_bit = 1;
 
         // Apply reset
@@ -46,10 +46,9 @@ module uart_tx_tb;
 
         // Wait a bit before starting transmission
         #2;
-        @(posedge i_tx_clk)
+        //@(posedge i_tx_clk)
         // Set data to transmit
-        i_data_in = 8'b10101010; // Example data
-        i_parity_bit = 1;        // Enable parity
+        //i_data_in = 8'b10101011; // Example data        // Enable parity
         //i_stop_bit = 1;
 
         // Pulse start bit to begin transmission
@@ -59,10 +58,12 @@ module uart_tx_tb;
 
         // Wait for transmission to complete
         wait(o_tx_data_done);
-        //#4;
+        #100;
 
         // Finish simulation
         $display("Transmission completed.");
+        
+        $finish;
         //$stop;
     end
 

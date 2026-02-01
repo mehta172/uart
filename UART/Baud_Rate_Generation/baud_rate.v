@@ -9,7 +9,7 @@ module baud_rate #(
 );
 
 parameter Rate_tx = (clk_rate/Baud_rate);
-parameter Rate_rx = (clk_rate/(Baud_rate * 16));
+parameter Rate_rx = (clk_rate/(Baud_rate));
 
 parameter Rate_tx_cnt_width = $clog2(Rate_tx);
 parameter Rate_rx_cnt_width = $clog2(Rate_rx);
